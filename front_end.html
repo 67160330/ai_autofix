@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassPrint AI - Dashboard</title>
+    <!-- เรียกใช้ Tailwind CSS ผ่าน CDN เพื่อความง่ายในการตกแต่ง -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- นำเข้าไอคอน Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body class="bg-slate-50 font-sans antialiased text-slate-800">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- 1. SIDEBAR (แถบเมนูด้านซ้าย) -->
+        <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between p-4">
+            <div>
+                <!-- โลโก้ระบบ -->
+                <div class="flex items-center gap-2 mb-8 px-2">
+                    <span class="material-symbols-outlined text-teal-600 text-3xl font-bold">print_connect</span>
+                    <h1 class="text-xl font-bold bg-gradient-to-r stream-teal text-transparent bg-clip-text from-teal-600 to-cyan-600">PassPrint AI</h1>
+                </div>
+                
+                <!-- รายการเมนู -->
+                <nav class="space-y-1">
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 rounded-lg font-medium transition-all">
+                        <span class="material-symbols-outlined">document_scanner</span> สแกนไฟล์
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-all">
+                        <span class="material-symbols-outlined">history</span> ประวัติการใช้งาน
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-all">
+                        <span class="material-symbols-outlined">settings</span> การตั้งค่า
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-all">
+                        <span class="material-symbols-outlined">help</span> ศูนย์ช่วยเหลือ
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- เครดิตด้านล่าง Sidebar -->
+            <div class="text-xs text-slate-400 border-t pt-4 px-2">
+                © ระบบตรวจสอบไฟล์พิมพ์อัจฉริยะ
+            </div>
+        </aside>
+
+        <!-- พื้นที่แสดงคอนเทนต์หลัก -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            
+            <!-- TOP NAVBAR -->
+            <header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6">
+                <div class="text-sm text-slate-500">หน้าแดชบอร์ด > สแกนไฟล์</div>
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                    <div class="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-sm">P</div>
+                    <span class="text-sm font-medium">ติดต่อโรงพิมพ์ partner</span>
+                </div>
+            </header>
+
+            <!-- 2. MAIN DASHBOARD CONTENT (3 ส่วนหลักตามภาพ) -->
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- [ส่วนที่ 1]: FILE SCAN STATUS (ฝั่งซ้าย) -->
+                <section class="lg:col-span-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm h-full">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">File Scan Status</h3>
+                    <div class="bg-slate-50 p-3 rounded-xl mb-4 border border-slate-100">
+                        <p class="text-xs font-semibold text-slate-500">1. สถานะไฟล์: <span class="text-slate-800">สติ๊กเกอร์สินค้า_V3.png</span></p>
+                    </div>
+
+                    <!-- จำลองรูปภาพที่พิกเซลแตก -->
+                    <div class="flex justify-center my-6">
+                        <div class="w-32 h-32 bg-slate-200 rounded-full flex items-center justify-center border-4 border-dashed border-slate-300 relative overflow-hidden group">
+                            <!-- จำลองภาพเบลอด้วยโมเสกสไตล์ไอคอน -->
+                            <span class="material-symbols-outlined text-slate-400 text-6xl blur-[1px]">blur_on</span>
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="text-white text-xs font-medium">ไฟล์ต้นฉบับ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ระบบไฟสัญญาณแจ้งเตือนปัญหางานพิมพ์ -->
+                    <div class="space-y-3 mt-4">
+                        <div class="flex items-start gap-3 p-3 bg-red-50 rounded-xl border border-red-100">
+                            <span class="w-3 h-3 rounded-full bg-red-500 mt-1 shrink-0 animate-pulse"></span>
+                            <div>
+                                <h4 class="text-sm font-bold text-red-900">ภาพแตกเกินไป (Low Resolution)</h4>
+                                <p class="text-xs text-red-700">- ต้องแก้ไขความละเอียดต่ำกว่า 300 DPI</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl border border-amber-100">
+                            <span class="w-3 h-3 rounded-full bg-amber-500 mt-1 shrink-0"></span>
+                            <div>
+                                <h4 class="text-sm font-bold text-amber-900">ค่าสีเป็น RGB / ไม่ใช่ CMYK</h4>
+                                <p class="text-xs text-amber-700">- ต้องแก้ไข สีอาจเพี้ยนเมื่อพิมพ์จริง</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl border border-amber-100">
+                            <span class="w-3 h-3 rounded-full bg-amber-500 mt-1 shrink-0"></span>
+                            <div>
+                                <h4 class="text-sm font-bold text-amber-900">ไม่มีระยะตัดตก (No Bleed)</h4>
+                                <p class="text-xs text-amber-700">- ต้องแก้ไข ข้อมูลสำคัญอาจโดนตัดขอบ</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ส่วนที่ 2]: AI HEALING CONTROL (ตรงกลาง) -->
+                <section class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-slate-200 shadow-sm min-h-[450px]">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-8 self-start">AI Healing Control</h3>
+                    
+                    <!-- ปุ่มวิเศษ "ซ่อมผ่านฉลุย" -->
+                    <button id="healBtn" class="w-48 h-48 rounded-full bg-gradient-to-tr from-teal-500 to-cyan-500 text-white font-bold text-xl shadow-lg shadow-teal-500/30 hover:scale-105 active:scale-95 transition-all flex flex-col items-center justify-center gap-2 border-8 border-teal-50 relative group">
+                        <span class="material-symbols-outlined text-5xl animate-bounce">magic_button</span>
+                        <span>ซ่อมผ่านฉลุย</span>
+                        <span class="text-xs font-normal text-teal-100 group-hover:text-white">(Auto-Healing)</span>
+                    </button>
+
+                    <!-- สถานะการประมวลผล (ซ่อนไว้เริ่มต้น) -->
+                    <div id="loadingStatus" class="hidden flex items-center gap-2 mt-6 text-sm font-medium text-slate-500">
+                        <svg class="animate-spin h-5 w-5 text-teal-600" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        กำลังประมวลผลซ่อมไฟล์ด้วย AI...
+                    </div>
+
+                    <!-- ตัวเลื่อนเปรียบเทียบ Before / After -->
+                    <div class="w-full mt-8 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div class="flex justify-between text-xs font-bold text-slate-400 mb-2">
+                            <span>Before (แตก)</span>
+                            <span>After (คมชัด)</span>
+                        </div>
+                        <input type="range" min="1" max="100" value="50" class="w-full accent-teal-600 cursor-pointer">
+                    </div>
+                </section>
+
+                <!-- [ส่วนที่ 3]: DOWNLOAD & PAYMENT (ฝั่งขวา) -->
+                <section class="lg:col-span-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm h-full">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Download & Payment</h3>
+                    <div class="bg-slate-50 p-3 rounded-xl mb-4 border border-slate-100">
+                        <p class="text-xs font-semibold text-slate-500">2. จ่ายเงินและดาวน์โหลด</p>
+                    </div>
+
+                    <!-- ส่วนชำระเงินจำลอง QR Code -->
+                    <div class="text-center p-4 bg-slate-50 rounded-xl border border-slate-100 mb-5">
+                        <p class="text-xs font-medium text-slate-600 mb-2">สแกน QR Code เพื่อจ่ายเงิน (39 บาท)</p>
+                        <div class="w-32 h-32 bg-white border mx-auto p-2 rounded-lg flex items-center justify-center shadow-sm">
+                            <!-- รูปจำลอง QR code -->
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PassPrintAI" alt="QR Code" class="w-full h-full">
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">ยอดเงินคงเหลือ: <span class="font-bold text-red-500">0 บาท</span></p>
+                    </div>
+
+                    <!-- ปุ่มกดรับไฟล์หลังจากซ่อมแล้ว -->
+                    <div class="space-y-2 opacity-60" id="downloadZone">
+                        <div class="flex items-center justify-between p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+                                <span class="text-sm font-semibold">.pdf for print</span>
+                            </div>
+                            <button class="text-slate-400" disabled>
+                                <span class="material-symbols-outlined">lock</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-orange-500">layers</span>
+                                <span class="text-sm font-semibold">.ai vector</span>
+                            </div>
+                            <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">bolt</span> ปลดล็อคแล้ว
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- ปุ่มส่งจำลองสถานะ -->
+                    <button id="payMockBtn" class="w-full mt-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl text-sm transition-colors shadow-sm flex items-center justify-center gap-1">
+                        ชำระเงินสำเร็จ ➔ ดาวน์โหลดได้ <span class="material-symbols-outlined text-sm">check_circle</span>
+                    </button>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ลอจิกจำลองเอฟเฟกต์การกดปุ่มทางหน้าเว็บ (Interactions) -->
+    <script>
+        const healBtn = document.getElementById('healBtn');
+        const loadingStatus = document.getElementById('loadingStatus');
+        const payMockBtn = document.getElementById('payMockBtn');
+        const downloadZone = document.getElementById('downloadZone');
+
+        // เอฟเฟกต์จำลองเมื่อกดปุ่ม "ซ่อมผ่านฉลุย"
+        healBtn.addEventListener('click', () => {
+            loadingStatus.classList.remove('hidden');
+            healBtn.classList.add('opacity-50', 'pointer-events-none');
+            
+            setTimeout(() => {
+                loadingStatus.innerHTML = '✨ ซ่อมแซมไฟล์เสร็จสมบูรณ์ 100%!';
+                loadingStatus.classList.remove('text-slate-500');
+                loadingStatus.classList.add('text-teal-600', 'font-bold');
+            }, 3000);
+        });
+
+        // เอฟเฟกต์จำลองเมื่อกดจำลองชำระเงิน
+        payMockBtn.addEventListener('click', () => {
+            downloadZone.classList.remove('opacity-60');
+            alert('💳 จำลองระบบ: ชำระเงินสำเร็จ 39 บาท ปดล็อคไฟล์ .pdf และ .ai พร้อมสั่งพิมพ์เรียบร้อยครับ!');
+        });
+    </script>
+</body>
+</html>
