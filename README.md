@@ -1,6 +1,8 @@
 # 🎨 PassPrint AI - Single Page Print Fixer (Frontend Showcase)
 
-**กลุ่มอุตสาหกรรม:** อุตสาหกรรมโรงพิมพ์ บรรจุภัณฑ์ และการพิมพ์ดิจิทัล (Printing & Packaging Industry)
+🌐 **Live Demo (เข้าชมหน้าเว็บจริง):** https://67160330.github.io/ai_autofix/  
+📁 **Repository Link:** https://github.com/67160330/ai_autofix  
+🏭 **กลุ่มอุตสาหกรรม:** อุตสาหกรรมโรงพิมพ์ บรรจุภัณฑ์ และการพิมพ์ดิจิทัล (Printing & Packaging Industry)
 
 ---
 
@@ -22,10 +24,10 @@
 ## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
 * **HTML5 / JavaScript (ES6):** จัดการ DOM Events, Touch/Mouse Tracking Slider
 * **Tailwind CSS (via CDN):** จัดเลย์เอาต์หน้าจอแบบ Modern Dark-mode Dashboard
-* **REST API Integration:** เชื่อมต่อรับ-ส่งข้อมูลกับเซิร์ฟเวอร์หลังบ้าน Python (OpenCV / AI Super Resolution)
+* **GitHub Pages:** ใช้สำหรับ Deploy หน้าเว็บฝั่ง Frontend ให้สามารถใช้งานออนไลน์ได้ทันที
 
 ---
 
 ## 🚀 วิธีกดรันเพื่อตรวจโปรเจกต์ (How to Run)
-1. ดับเบิ้ลคลิกเปิดไฟล์ `index.html` บนเว็บเบราว์เซอร์ได้ทันที ไม่จำเป็นต้องติดตั้งไลบรารีเพิ่มเติม
-2. (Optional) หากต้องการทดสอบระบบประมวลผลหลังบ้านจริง ให้รัน Backend Python (`uvicorn main:app --reload`) ที่พอร์ต `8000`
+1. สามารถเข้าใช้งานผ่าน **Live Demo** ได้ทันทีที่: https://67160330.github.io/ai_autofix/
+2. หรือดาวน์โหลดไฟล์ `index.html` ไปเปิดบนเว็บเบราว์เซอร์ในเครื่องคอมพิวเตอร์ได้ทันทีโดยไม่ต้องติดตั้งแพ็กเกจเสริม
