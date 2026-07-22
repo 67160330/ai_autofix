@@ -1,8 +1,7 @@
 # 🎨 PassPrint AI - Single Page Print Fixer (Frontend Showcase)
 
 🌐 **Live Demo (เข้าชมหน้าเว็บจริง):** https://67160330.github.io/ai_autofix/  
-📁 **Repository Link:** https://github.com/67160330/ai_autofix  
-🏭 **กลุ่มอุตสาหกรรม:** อุตสาหกรรมโรงพิมพ์ บรรจุภัณฑ์ และการพิมพ์ดิจิทัล (Printing & Packaging Industry)
+🏭 **กลุ่มอุตสาหกรรม:** กลุ่มอุตสาหกรรมการพิมพ์และบรรจุภัณฑ์
 
 ---
 
